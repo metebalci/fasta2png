@@ -6,4 +6,4 @@ install:
 script:
     - pip install -e .
     - fna2png --input NC_045512.2.fna --output NC_045512.2.copy.png --pixel-size 4 --aspect-ratio 3 2
-    - cmp NC_045512.2.fna NC_045512.2.copy.png
+    - cmp NC_045512.2.png NC_045512.2.copy.png

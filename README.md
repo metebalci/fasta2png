@@ -1,6 +1,8 @@
 
 # fasta2png
 
+[![Build Status](https://travis-ci.com/metebalci/fasta2png.svg?branch=master)](https://travis-ci.com/metebalci/fasta2png)
+
 This program generates PNG images from nucleic acid (na) sequences in FASTA format.
 
 It scans the sequence and generates a (small) rectangle (configurable size with --pixel-size) for each nucleotide bases from top-left to bottom-right. The aspect ratio of the PNG is also configurable (with --aspect-ratio). The PNG image is in RGBA format.
