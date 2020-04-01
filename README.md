@@ -6,7 +6,7 @@
 This package includes two programs:
 
 - fna2png: generates PNG images from nucleic acid (na) sequences in FASTA format representing nucleic acids with different colors.
-- faa2png: generates PNG images from nucleic acid (na) or amino acid (aa) sequences in FASTA format representing amino acids (codons) with different colors.
+- faa2png: generates PNG images from amino acid (aa) / protein sequences in FASTA format representing amino acids (codons) with different colors.
 
 Both programs scan the sequence and generates a (small) rectangle (configurable size with --pixel-size) for each nucleotide bases or for each amino acids (codons) from top-left to bottom-right. The aspect ratio of the PNG is also configurable (with --aspect-ratio). The PNG image is in RGBA format.
 
@@ -23,7 +23,7 @@ pip install fasta2png
 # Usage: fna2png
 
 ```
-fna2png --input <fna_input_in_fasta_format> --output <output_filename>
+fna2png --input <fna_input_in_fasta_format> --output <output_filename_of_png>
 ```
 
 There are various options to customize PNG output, see help `fna2png --help` for more info.
@@ -31,16 +31,8 @@ There are various options to customize PNG output, see help `fna2png --help` for
 # Usage: faa2png
 
 ```
-faa2png --input <fna_input_in_fasta_format> --output <output_filename>
+faa2png --input <faa_input_in_fasta_format> --output <output_filename_of_png>
 ```
-
-if the input consists of a nucleic acid sequence. So faa2png converts this into amino acids. If the input consists of amino acid sequence, then:
-
-```
-faa2png --input <faa_input_in_fasta_format> --output <output_filename> --dont-convert
-```
-
-can be used so the conversion is not done.
 
 There are some options to customize PNG output, see help `faa2png --help` for more info.
 
