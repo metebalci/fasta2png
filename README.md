@@ -3,11 +3,16 @@
 
 [![Build Status](https://travis-ci.com/metebalci/fasta2png.svg?branch=master)](https://travis-ci.com/metebalci/fasta2png)
 
-This program generates PNG images from nucleic acid (na) sequences in FASTA format.
+This package includes two programs:
 
-It scans the sequence and generates a (small) rectangle (configurable size with --pixel-size) for each nucleotide bases from top-left to bottom-right. The aspect ratio of the PNG is also configurable (with --aspect-ratio). The PNG image is in RGBA format.
+- fna2png: generates PNG images from nucleic acid (na) sequences in FASTA format representing nucleic acids with different colors.
+- faa2png: generates PNG images from nucleic acid (na) or amino acid (aa) sequences in FASTA format representing amino acids (codons) with different colors.
 
-A, C, G, T is painted using different colors (U is same as T), and all other codes (N and others) are painted with white. The background of the image (meaning the remaining area in the image) is painted with black. These colors are also configurable.
+Both programs scan the sequence and generates a (small) rectangle (configurable size with --pixel-size) for each nucleotide bases or for each amino acids (codons) from top-left to bottom-right. The aspect ratio of the PNG is also configurable (with --aspect-ratio). The PNG image is in RGBA format.
+
+For nucleic acid outputs, A, C, G, T is painted using different colors (U is same as T), and all other codes (N and others) are painted with white. The background of the image (meaning the remaining area in the image) is painted with black. These colors are also configurable.
+
+For amino acid (codon) outputs, each codon is painted using a different color. The gap (-) is painted as same as background. Only the background color is configurable.
 
 # Installation
 
@@ -15,15 +20,31 @@ A, C, G, T is painted using different colors (U is same as T), and all other cod
 pip install fasta2png
 ```
 
-# Usage
+# Usage: fna2png
 
 ```
-fna2png --input <input_in_fasta_format> --output <output_filename>
+fna2png --input <fna_input_in_fasta_format> --output <output_filename>
 ```
 
 There are various options to customize PNG output, see help `fna2png --help` for more info.
 
-# Example
+# Usage: faa2png
+
+```
+faa2png --input <fna_input_in_fasta_format> --output <output_filename>
+```
+
+if the input consists of a nucleic acid sequence. So faa2png converts this into amino acids. If the input consists of amino acid sequence, then:
+
+```
+faa2png --input <faa_input_in_fasta_format> --output <output_filename> --dont-convert
+```
+
+can be used so the conversion is not done.
+
+There are some options to customize PNG output, see help `faa2png --help` for more info.
+
+# Example: fna2png
 
 [NC_045512.2](https://www.ncbi.nlm.nih.gov/nuccore/NC_045512) is the SARS-CoV-2 (corona virus 2) complete genome sequenced by Chinese researchers in January 2020.
 
@@ -36,4 +57,18 @@ seqdesc: NC_045512.2 Severe acute respiratory syndrome coronavirus 2 isolate Wuh
 seqlen: 29903
 ```
 
-![NC_045512.2.png](NC_045512.2.png)
+![NC_045512.2.fna.png](NC_045512.2.fna.png)
+
+# Example: faa2png
+
+This example is using the same SARS-CoV-2 sequence, but taking the first gene in its genome called ORF1ab.
+
+YP_009724389.1.faa file below is https://www.ncbi.nlm.nih.gov/protein/YP_009724389.1?report=fasta&log$=seqview&format=text.
+
+```
+$ faa2png --input YP_009724389.1.faa --output YP_009724389.1.faa.png --pixel-size 4 --aspect-ratio 3 2
+seqdesc: YP_009724389.1 orf1ab polyprotein [Severe acute respiratory syndrome coronavirus 2]
+seqlen: 7096
+```
+
+![YP_009724389.1.faa.png](YP_009724389.1.faa.png)
