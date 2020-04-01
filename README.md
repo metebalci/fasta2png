@@ -43,7 +43,7 @@ There are some options to customize PNG output, see help `faa2png --help` for mo
 NC_045512.2.fna file below is https://www.ncbi.nlm.nih.gov/nuccore/NC_045512.2?report=fasta&log$=seqview&format=text.
 
 ```
-$ fna2png --input NC_045512.2.fna --output NC_045512.2.png --pixel-size 4 --aspect-ratio 3 2
+$ fna2png --input NC_045512.2.fna --output NC_045512.2.png --pixel-size 8 --aspect-ratio 3 2
 
 seqdesc: NC_045512.2 Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genome
 seqlen: 29903
@@ -53,12 +53,13 @@ seqlen: 29903
 
 # Example: faa2png
 
-This example is using the same SARS-CoV-2 sequence, but taking the first gene in its genome called ORF1ab.
+This example is using the same SARS-CoV-2 sequence, but taking the protein encoded by the first gene in its genome called ORF1ab.
 
 YP_009724389.1.faa file below is https://www.ncbi.nlm.nih.gov/protein/YP_009724389.1?report=fasta&log$=seqview&format=text.
 
 ```
 $ faa2png --input YP_009724389.1.faa --output YP_009724389.1.faa.png --pixel-size 4 --aspect-ratio 3 2
+
 seqdesc: YP_009724389.1 orf1ab polyprotein [Severe acute respiratory syndrome coronavirus 2]
 seqlen: 7096
 ```
