@@ -7,5 +7,5 @@ script:
     - pip install -e .
     - fna2png --input NC_045512.2.fna --output NC_045512.2.fna.copy.png --pixel-size 4 --aspect-ratio 3 2
     - cmp NC_045512.2.fna.png NC_045512.2.fna.copy.png
-    - faa2png --input YP_009724389.1.faa --output YP_009724389.1.faa.copy.png --pixel-size 4 --aspect-ratio 3 2
+    - faa2png --input YP_009724389.1.faa --output YP_009724389.1.faa.copy.png --pixel-size 8 --aspect-ratio 3 2
     - cmp YP_009724389.1.faa.png YP_009724389.1.faa.copy.png
