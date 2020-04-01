@@ -12,7 +12,7 @@ Both programs scan the sequence and generates a (small) rectangle (configurable 
 
 For nucleic acid outputs, A, C, G, T is painted using different colors (U is same as T), and all other codes (N and others) are painted with white. The background of the image (meaning the remaining area in the image) is painted with black. These colors are also configurable.
 
-For amino acid (codon) outputs, each codon is painted using a different color. The gap (-) is painted as same as background. Only the background color is configurable.
+For amino acid (codon) outputs, each codon is painted using a different color. The gap (-) is painted as same as background. Only the background color is configurable, because there are so many (27) codes.
 
 # Installation
 
