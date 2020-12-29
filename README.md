@@ -65,3 +65,7 @@ seqlen: 7096
 ```
 
 ![YP_009724389.1.faa.png](YP_009724389.1.faa.png)
+
+# Changes
+
+- v3: Pillow updated to v8.0.1.
