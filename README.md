@@ -68,5 +68,6 @@ seqlen: 7096
 
 # Changes
 
-- v4: Pillow updated to 8.2.0.
+- v5: Pillow updated to 8.2.0.
+- v4: dont use.
 - v3: Pillow updated to v8.0.1.
