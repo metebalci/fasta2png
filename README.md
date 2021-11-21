@@ -1,7 +1,7 @@
 
 # fasta2png
 
-[![Build Status](https://travis-ci.com/metebalci/fasta2png.svg?branch=master)](https://travis-ci.com/metebalci/fasta2png)
+[![CircleCI](https://circleci.com/gh/metebalci/fasta2png/tree/master.svg?style=svg)](https://circleci.com/gh/metebalci/fasta2png/tree/master)
 
 This package includes two programs:
 
