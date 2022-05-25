@@ -68,6 +68,8 @@ seqlen: 7096
 
 # Changes
 
+- v7: Pillow updated to 9.1.1, CI config updated.
+- v6: Pillow updated to 9.0.1.
 - v5: Pillow updated to 8.2.0.
 - v4: dont use.
 - v3: Pillow updated to v8.0.1.
