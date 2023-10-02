@@ -6,13 +6,18 @@
 This package includes two programs:
 
 - fna2png: generates PNG images from nucleic acid (na) / nucleotide sequences in FASTA format representing different nucleic acids with different colors.
+
 - faa2png: generates PNG images from amino acid (aa) / protein sequences in FASTA format representing different amino acids (codons) with different colors.
 
-Both programs scan the sequence and generates a (small) rectangle (configurable size with --pixel-size) for each nucleotide bases or for each amino acids (codons) from top-left to bottom-right. The aspect ratio of the PNG is also configurable (with --aspect-ratio). The PNG image is in RGBA format.
+Both programs scan the file and generate an image containing solid squares (configurable size with `--pixel-size`) for each nucleotide bases or for each amino acids (codons) from top-left to bottom-right. The aspect ratio of the PNG is configurable (with `--aspect-ratio`). The PNG image is in RGBA format.
 
 For nucleotide sequences, A, C, G, T is painted using different colors (U is same as T), and all other codes (N and others) are painted with white. The background of the image (meaning the remaining area in the image) is painted with black. These colors are also configurable.
 
 For protein sequences, each amino acid/codon is painted using a different color. The gap (-) is painted as same as background. Only the background color is configurable, because there are so many (27) codes.
+
+For nucleotide sequences, multi-FASTA format accepted and either a single image containing the (sequentially) combined sequence or one image for each sequence is generated. This is controlled with `--multi-mode` option.
+
+For protein sequqnces, multi-FASTA format is not supported at the moment, an image only for the first sequence will be generated. If you require this feature, please create an issue.
 
 # Installation
 
@@ -20,21 +25,23 @@ For protein sequences, each amino acid/codon is painted using a different color.
 pip install fasta2png
 ```
 
-# Usage: fna2png
+# multi-FASTA format options
 
-```
-fna2png --input <fna_input_in_fasta_format> --output <output_filename_of_png>
-```
+For fna files, `--multi-mode` can be set to:
 
-There are various options to customize PNG output, see help `fna2png --help` for more info.
+- `f` or `first`: only processes the first sequence (ignores the multi-FASTA format)
+- `c` or `combined`: creates a single image containing all sequences combined
+- `s` or `separate`: creates one image for each sequence
 
-# Usage: faa2png
+# output options
 
-```
-faa2png --input <faa_input_in_fasta_format> --output <output_filename_of_png>
-```
+For fna files, `--output` is optional. If it is not given, the name/identifier in the file is used as the output file name (with `.png` suffix automatically added).
 
-There are some options to customize PNG output, see help `faa2png --help` for more info.
+If a multi-FASTA file is given with `--multi-mode=s`:
+
+- if `--output` is given, it is used as a prefix, and file names are formed as `<prefix><seqnum>.png.` `<seqnum>` starts from 1. 
+
+- if `--output` is not given, the name/identifier of the sequence is used and only `.png` is added.
 
 # Example: fna2png
 
@@ -68,6 +75,7 @@ seqlen: 7096
 
 # Changes
 
+- v8: Pillow updated to 9.3.0. multi-FASTA format supported for fna files.
 - v7: Pillow updated to 9.1.1, CI config updated.
 - v6: Pillow updated to 9.0.1.
 - v5: Pillow updated to 8.2.0.
