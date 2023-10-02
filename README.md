@@ -5,9 +5,9 @@
 
 This package includes two programs:
 
-- fna2png: generates PNG images from nucleic acid (na) / nucleotide sequences in FASTA format representing different nucleic acids with different colors.
+- `fna2png`: generates PNG images from nucleic acid (na) / nucleotide sequences in FASTA format representing different nucleic acids with different colors.
 
-- faa2png: generates PNG images from amino acid (aa) / protein sequences in FASTA format representing different amino acids (codons) with different colors.
+- `faa2png`: generates PNG images from amino acid (aa) / protein sequences in FASTA format representing different amino acids (codons) with different colors.
 
 Both programs scan the file and generate an image containing solid squares (configurable size with `--pixel-size`) for each nucleotide bases or for each amino acids (codons) from top-left to bottom-right. The aspect ratio of the PNG is configurable (with `--aspect-ratio`). The PNG image is in RGBA format.
 
@@ -39,7 +39,7 @@ For fna files, `--output` is optional. If it is not given, the name/identifier i
 
 If a multi-FASTA file is given with `--multi-mode=s`:
 
-- if `--output` is given, it is used as a prefix, and file names are formed as `<prefix><seqnum>.png.` `<seqnum>` starts from 1. 
+- if `--output` is given, it is used as a prefix, and file names are formed as `<prefix><seqnum>.png`, and `<seqnum>` starts from 1. 
 
 - if `--output` is not given, the name/identifier of the sequence is used and only `.png` is added.
 
