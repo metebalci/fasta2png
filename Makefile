@@ -1,11 +1,9 @@
 
-.empty:
-
-build:
-	python3 -m build
-
 check:
-	twine check dist/*
+	python -m twine check dist/*
 
 upload:
-	twine upload dist/*
+	rm -rf build
+	rm -rf dist
+	python -m build
+	python -m twine upload -r pypi dist/*

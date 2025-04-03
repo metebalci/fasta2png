@@ -26,7 +26,9 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = [
-  "setuptools >= 61.0"
+  "setuptools >= 61.0",
+  "build",
+  "twine"
 ]
 
 [project.scripts]
