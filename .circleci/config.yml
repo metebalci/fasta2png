@@ -3,10 +3,10 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/python:3.8
+      - image: cimg/python:3.12
     steps:
       - checkout
-      - run: pip install -e .
+      - run: pip install .
       - run: fna2png --input NC_045512.2.fna --output NC_045512.2.fna.copy.png --pixel-size 4 --aspect-ratio 3 2
       - run: cmp NC_045512.2.fna.png NC_045512.2.fna.copy.png
       - run: faa2png --input YP_009724389.1.faa --output YP_009724389.1.faa.copy.png --pixel-size 8 --aspect-ratio 3 2

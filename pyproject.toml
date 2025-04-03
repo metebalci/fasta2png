@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+version = "9"
+name = "fasta2png"
+dependencies = [
+  "Pillow >= 11.1.0"
+]
+requires-python = ">= 3.12"
+authors = [
+  {name = "Mete Balci", email = "metebalci@gmail.com"},
+]
+description = "PNG visualization of nucleic acid or protein sequences"
+readme = {file = "README.md", content-type = "text/markdown"}
+keywords = ["fasta", "fna", "faa", "png"]
+classifiers = [
+  'Development Status :: 3 - Alpha',
+  'Environment :: Console',
+  'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+  'Programming Language :: Python :: 3',
+  'Operating System :: OS Independent',
+  'Topic :: Utilities',
+]
+
+[project.optional-dependencies]
+dev = [
+  "setuptools >= 61.0"
+]
+
+[project.scripts]
+fna2png = "fasta2png.fna2png:main"
+faa2png = "fasta2png.faa2png:main"
+
+[project.urls]
+Homepage = "https://github.com/metebalci/fasta2png"
+Documentation = "https://github.com/metebalci/fasta2png"
+Repository = "https://github.com/metebalci/fasta2png.git"
+Issues = "https://github.com/metebalci/fasta2png/issues"
+Changelog = "https://github.com/metebalci/fasta2png/blob/master/README.md"
+
+[tool.setuptools]
+packages = ["fasta2png"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.pylint]
+disable = [
+  "unknown-option-value", 
+  "missing-module-docstring", 
+  "missing-class-docstring",
+  "missing-function-docstring",
+]
+
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true

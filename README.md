@@ -75,6 +75,7 @@ seqlen: 7096
 
 # Changes
 
+- v9: Pillow updated to 11.1.0. migrated to pyproject.toml.
 - v8: Pillow updated to 9.3.0. multi-FASTA format supported for fna files.
 - v7: Pillow updated to 9.1.1, CI config updated.
 - v6: Pillow updated to 9.0.1.
