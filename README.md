@@ -1,7 +1,7 @@
 
 # fasta2png
 
-[![CircleCI](https://circleci.com/gh/metebalci/fasta2png/tree/master.svg?style=svg)](https://circleci.com/gh/metebalci/fasta2png/tree/master)
+> **This project is no longer maintained.** It continues as [seqpaint](https://github.com/metebalci/seqpaint).
 
 This package includes two programs:
 
